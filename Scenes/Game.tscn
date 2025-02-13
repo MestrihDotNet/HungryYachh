@@ -1,0 +1,153 @@
+[gd_scene load_steps=23 format=3 uid="uid://btx2na0mfb4gd"]
+
+[ext_resource type="Script" path="res://scripts/Game.cs" id="1_niiil"]
+[ext_resource type="PackedScene" uid="uid://bui7majqo6qv0" path="res://Scenes/Player.tscn" id="3_r1wpv"]
+[ext_resource type="Texture2D" uid="uid://b2i0inowukmlg" path="res://assets/Kitchen.png" id="4_06maj"]
+[ext_resource type="PackedScene" uid="uid://gqp61jwlkb70" path="res://Scenes/FallenFood.tscn" id="4_ouvaa"]
+[ext_resource type="AudioStream" uid="uid://olyu1aeaodei" path="res://assets/spell1_0.wav" id="6_rtdax"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcsfl"]
+atlas = ExtResource("4_06maj")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3w6q"]
+atlas = ExtResource("4_06maj")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcba2"]
+atlas = ExtResource("4_06maj")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjgfx"]
+atlas = ExtResource("4_06maj")
+region = Rect2(960, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykrjv"]
+atlas = ExtResource("4_06maj")
+region = Rect2(1280, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qfei"]
+atlas = ExtResource("4_06maj")
+region = Rect2(1600, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c0ao"]
+atlas = ExtResource("4_06maj")
+region = Rect2(1920, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrpv2"]
+atlas = ExtResource("4_06maj")
+region = Rect2(2240, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mesvm"]
+atlas = ExtResource("4_06maj")
+region = Rect2(2560, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrpvb"]
+atlas = ExtResource("4_06maj")
+region = Rect2(2880, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdfdx"]
+atlas = ExtResource("4_06maj")
+region = Rect2(3200, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lkyy"]
+atlas = ExtResource("4_06maj")
+region = Rect2(3520, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nafau"]
+atlas = ExtResource("4_06maj")
+region = Rect2(3840, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb25c"]
+atlas = ExtResource("4_06maj")
+region = Rect2(4160, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oomg4"]
+atlas = ExtResource("4_06maj")
+region = Rect2(4480, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y00e"]
+atlas = ExtResource("4_06maj")
+region = Rect2(4800, 0, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uik71"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcsfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3w6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcba2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjgfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykrjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qfei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c0ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrpv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mesvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrpvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdfdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lkyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nafau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb25c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oomg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y00e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_spawntimer")]
+script = ExtResource("1_niiil")
+_gemScene = ExtResource("4_ouvaa")
+_spawntimer = NodePath("SpawnTimer")
+
+[node name="Paddle" parent="." instance=ExtResource("3_r1wpv")]
+z_index = 1
+position = Vector2(330, 337)
+scale = Vector2(1.7, 1.7)
+_speed = 300.0
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Effects" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_rtdax")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(2, 1.5)
+sprite_frames = SubResource("SpriteFrames_uik71")
+autoplay = "default"
+frame = 6
+frame_progress = 0.755499

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\godot-repos\\GemCatcher\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\gemcatcher\\scripts\\gem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\gem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\gemcatcher\\scripts\\paddle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\paddle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\gemcatcher\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Gem.cs",
+              "DocumentMoniker": "C:\\godot-repos\\GemCatcher\\scripts\\Gem.cs",
+              "RelativeDocumentMoniker": "scripts\\Gem.cs",
+              "ToolTip": "C:\\godot-repos\\GemCatcher\\scripts\\Gem.cs",
+              "RelativeToolTip": "scripts\\Gem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T23:32:50.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Paddle.cs",
+              "DocumentMoniker": "C:\\godot-repos\\GemCatcher\\scripts\\Paddle.cs",
+              "RelativeDocumentMoniker": "scripts\\Paddle.cs",
+              "ToolTip": "C:\\godot-repos\\GemCatcher\\scripts\\Paddle.cs",
+              "RelativeToolTip": "scripts\\Paddle.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T23:18:41.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\godot-repos\\GemCatcher\\scripts\\Game.cs",
+              "RelativeDocumentMoniker": "scripts\\Game.cs",
+              "ToolTip": "C:\\godot-repos\\GemCatcher\\scripts\\Game.cs",
+              "RelativeToolTip": "scripts\\Game.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwCAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T23:17:35.141Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
