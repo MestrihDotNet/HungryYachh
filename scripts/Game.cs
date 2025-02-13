@@ -1,31 +1,43 @@
 using Godot;
 using System;
+using System.Threading.Tasks.Sources;
 
 public partial class Game : Node2D
 {
-	int score = 0;
-	const double GEM_MARGIN = 60.0f;
-	[Export] private PackedScene _gemScene;
-	[Export] private Timer _spawntimer;
-	[Export] private Label label;
+    [Export] private PackedScene _foodScene;
+    [Export] private Timer _spawnTimer;
+    private const int FOOD_MARGIN = 52;
+    [Export] public ProgressBar progressbar;
+    [Export] private Label scoreLabel;
 
-	public override void _Ready()
-	{
-		_spawntimer.Timeout += SpawnGem;
+    private int score = 0;
+    public override void _Ready()
+{
+        _spawnTimer.Timeout += SpawnFood;
+        SpawnFood();
+        
+    }
+    public override void _Process(double delta)
+    {
+    }
 
-	}
-	public override void _Process(double delta)
-	{
-	}
+    private void SpawnFood()
+    {
+        Rect2 vpr = GetViewportRect();
+        Food food = (Food)_foodScene.Instantiate();
+        AddChild(food);
 
-	private void SpawnGem()
-	{
-		Rect2 vpr = GetViewportRect();
-		Gem gem = (Gem)_gemScene.Instantiate();
-		AddChild(gem);
-		float rx = (float)GD.RandRange(vpr.Position.X + GEM_MARGIN, vpr.End.X - GEM_MARGIN); //add a margin to not spawn on the edge of both sides
+        float rx = (float)GD.RandRange(vpr.Position.X +FOOD_MARGIN, vpr.End.X -FOOD_MARGIN);
+        food.Position = new Vector2(rx, -100);
+        food.OnCatch += OnCatch;
+    }
 
-		gem.Position = new Vector2(rx, -50);
-	}
+    private void OnCatch()
+    {
+        GD.Print("Oncaaaaaaaaaaaaaaaaaaaatch");
+        progressbar.Value += 10;  // Example action
+        score += 10; // Increase score by 10
+        scoreLabel.Text = score.ToString();
+    }
 
 }

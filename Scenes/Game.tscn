@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://btx2na0mfb4gd"]
+[gd_scene load_steps=26 format=3 uid="uid://btx2na0mfb4gd"]
 
 [ext_resource type="Script" path="res://scripts/Game.cs" id="1_niiil"]
 [ext_resource type="PackedScene" uid="uid://bui7majqo6qv0" path="res://Scenes/Player.tscn" id="3_r1wpv"]
 [ext_resource type="Texture2D" uid="uid://b2i0inowukmlg" path="res://assets/Kitchen.png" id="4_06maj"]
-[ext_resource type="PackedScene" uid="uid://gqp61jwlkb70" path="res://Scenes/FallenFood.tscn" id="4_ouvaa"]
+[ext_resource type="PackedScene" uid="uid://gqp61jwlkb70" path="res://Scenes/Food.tscn" id="4_ouvaa"]
 [ext_resource type="AudioStream" uid="uid://olyu1aeaodei" path="res://assets/spell1_0.wav" id="6_rtdax"]
+[ext_resource type="Texture2D" uid="uid://bls48opg7ga" path="res://assets/health bar.png" id="6_yvmfn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcsfl"]
 atlas = ExtResource("4_06maj")
@@ -126,20 +127,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("_spawntimer")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip5ap"]
+bg_color = Color(0.443421, 0.491056, 0.551628, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_deoas"]
+bg_color = Color(0.796078, 0.270588, 0.368627, 1)
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_spawnTimer", "progressbar", "scoreLabel")]
 script = ExtResource("1_niiil")
-_gemScene = ExtResource("4_ouvaa")
-_spawntimer = NodePath("SpawnTimer")
-
-[node name="Paddle" parent="." instance=ExtResource("3_r1wpv")]
-z_index = 1
-position = Vector2(330, 337)
-scale = Vector2(1.7, 1.7)
-_speed = 300.0
-
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
+_foodScene = ExtResource("4_ouvaa")
+_spawnTimer = NodePath("Timer")
+progressbar = NodePath("CanvasLayer/ProgressBar")
+scoreLabel = NodePath("CanvasLayer/scoreLabel")
 
 [node name="Effects" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_rtdax")
@@ -151,3 +151,42 @@ sprite_frames = SubResource("SpriteFrames_uik71")
 autoplay = "default"
 frame = 6
 frame_progress = 0.755499
+
+[node name="Player" parent="." instance=ExtResource("3_r1wpv")]
+position = Vector2(336, 344)
+scale = Vector2(2, 2)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+z_index = 1
+offset_left = 40.0
+offset_top = 17.0
+offset_right = 132.0
+offset_bottom = 30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ip5ap")
+theme_override_styles/fill = SubResource("StyleBoxFlat_deoas")
+show_percentage = false
+
+[node name="HealthBar" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(72, 24)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_yvmfn")
+
+[node name="Labelfixed" type="Label" parent="CanvasLayer"]
+offset_left = 517.0
+offset_top = 13.0
+offset_right = 560.0
+offset_bottom = 36.0
+text = "Score"
+
+[node name="scoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 569.0
+offset_top = 13.0
+offset_right = 612.0
+offset_bottom = 36.0
