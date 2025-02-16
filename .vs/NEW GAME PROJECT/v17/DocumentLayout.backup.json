@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\godot-repos\\HungryYach\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Food.cs",
               "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\Food.cs",
               "RelativeDocumentMoniker": "scripts\\Food.cs",
               "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\Food.cs",
               "RelativeToolTip": "scripts\\Food.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB4AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T10:24:27.738Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\Player.cs",
               "RelativeDocumentMoniker": "scripts\\Player.cs",
               "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\Player.cs",
               "RelativeToolTip": "scripts\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T10:24:13.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\Game.cs",
               "RelativeDocumentMoniker": "scripts\\Game.cs",
               "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\Game.cs",
               "RelativeToolTip": "scripts\\Game.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T23:17:35.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-12T23:17:35.141Z"
             }
           ]
         }

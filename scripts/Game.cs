@@ -12,10 +12,9 @@ public partial class Game : Node2D
 
     private int score = 0;
     public override void _Ready()
-{
+    {
         _spawnTimer.Timeout += SpawnFood;
         SpawnFood();
-        
     }
     public override void _Process(double delta)
     {
@@ -29,15 +28,9 @@ public partial class Game : Node2D
 
         float rx = (float)GD.RandRange(vpr.Position.X +FOOD_MARGIN, vpr.End.X -FOOD_MARGIN);
         food.Position = new Vector2(rx, -100);
-        food.OnCatch += OnCatch;
     }
-
-    private void OnCatch()
+    private void _on_player_on_food_caught()
     {
-        GD.Print("Oncaaaaaaaaaaaaaaaaaaaatch");
-        progressbar.Value += 10;  // Example action
-        score += 10; // Increase score by 10
-        scoreLabel.Text = score.ToString();
+        progressbar.Value += 10;
     }
-
 }

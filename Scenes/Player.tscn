@@ -1,13 +1,11 @@
-[gd_scene load_steps=55 format=3 uid="uid://bui7majqo6qv0"]
+[gd_scene load_steps=58 format=3 uid="uid://bui7majqo6qv0"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_xi6wc"]
 [ext_resource type="Texture2D" uid="uid://dqfifcou3ekaj" path="res://assets/All animation.png" id="2_v8rvu"]
 [ext_resource type="Texture2D" uid="uid://bjp13gilgooo" path="res://assets/All animation - new version.png" id="2_vo22s"]
 [ext_resource type="Texture2D" uid="uid://4bowk7xvpgsi" path="res://assets/PlayerAnimation.png" id="3_lqstm"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_218e1"]
-radius = 3.0
-height = 20.0001
+[ext_resource type="Script" path="res://scripts/HeadArea.cs" id="5_c3k5v"]
+[ext_resource type="Script" path="res://scripts/MouthArea.cs" id="6_mgkwo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksamh"]
 atlas = ExtResource("2_vo22s")
@@ -230,7 +228,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"chewing",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -378,33 +376,39 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7mhvt"]
+a = Vector2(16, 0)
+b = Vector2(-25, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_218e1"]
+radius = 3.0
+height = 20.0001
+
 [node name="Player" type="Area2D"]
 script = ExtResource("1_xi6wc")
 _speed = 350.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = 1
-position = Vector2(0, -30)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_218e1")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_08tx8")
-animation = &"damaged"
+animation = &"chewing"
 autoplay = "idle"
+frame = 7
+frame_progress = 1.0
 
-[node name="MouthRayCastUp" type="RayCast2D" parent="."]
-position = Vector2(0, -40)
-target_position = Vector2(-5, -15)
-collide_with_areas = true
+[node name="HeadArea" type="Area2D" parent="."]
+script = ExtResource("5_c3k5v")
 
-[node name="MouthRayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, -40)
-target_position = Vector2(6, -15)
-collide_with_areas = true
+[node name="HeadCollision2d" type="CollisionShape2D" parent="HeadArea"]
+position = Vector2(4, -50)
+scale = Vector2(1.12597, 5.51462)
+shape = SubResource("SegmentShape2D_7mhvt")
 
-[node name="MouthRayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0, -40)
-target_position = Vector2(0, -16)
-collide_with_areas = true
+[node name="MouthArea" type="Area2D" parent="." groups=["player"]]
+position = Vector2(0, -30)
+rotation = 1.5708
+script = ExtResource("6_mgkwo")
+
+[node name="MouthCollision2d" type="CollisionShape2D" parent="MouthArea"]
+z_index = 1
+shape = SubResource("CapsuleShape2D_218e1")
