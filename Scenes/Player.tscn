@@ -378,7 +378,7 @@ animations = [{
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7mhvt"]
 a = Vector2(16, 0)
-b = Vector2(-25, 0)
+b = Vector2(-27.8327, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_218e1"]
 radius = 3.0
@@ -391,17 +391,16 @@ _speed = 350.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_08tx8")
-animation = &"chewing"
+animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 
 [node name="HeadArea" type="Area2D" parent="."]
 script = ExtResource("5_c3k5v")
 
 [node name="HeadCollision2d" type="CollisionShape2D" parent="HeadArea"]
-position = Vector2(4, -50)
-scale = Vector2(1.12597, 5.51462)
+z_index = 1
+position = Vector2(-6, -40)
+scale = Vector2(-0.825922, -3.64521)
 shape = SubResource("SegmentShape2D_7mhvt")
 
 [node name="MouthArea" type="Area2D" parent="." groups=["player"]]

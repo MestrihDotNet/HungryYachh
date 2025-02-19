@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnx4bsh3kowy2"
-path="res://.godot/imported/GameBg.png-34f991cdcfec60ad4058d0a22edcb255.ctex"
+uid="uid://bognelew2yq1m"
+path="res://.godot/imported/only-veggies.png-e7a5143fc95323ee7d8ad99d164de6e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GameBg.png"
-dest_files=["res://.godot/imported/GameBg.png-34f991cdcfec60ad4058d0a22edcb255.ctex"]
+source_file="res://assets/only-veggies.png"
+dest_files=["res://.godot/imported/only-veggies.png-e7a5143fc95323ee7d8ad99d164de6e9.ctex"]
 
 [params]
 

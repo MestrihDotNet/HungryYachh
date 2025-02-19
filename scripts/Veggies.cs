@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public partial class Food : Area2D
+public partial class Veggies : Area2D
 {
-    public event Action OnFoodEating;
+    public event Action OnVeggieEating;
     [Export] public Sprite2D FoodSprite; // Reference to the FoodSprite
     private Random _random = new Random();
     
@@ -25,7 +25,6 @@ public partial class Food : Area2D
 
         // Set the selected region for the sprite
         FoodSprite.RegionRect = new Rect2(x, y, FoodWidth, FoodHeight);
-
         AreaEntered += OnAreaEntered;
     }
 
@@ -37,11 +36,10 @@ public partial class Food : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
-        // Check if the food has been caught by the mouth area
         if (area is MouthArea)  // Assuming MouthArea is the Area2D that detects food
         {
             QueueFree(); // Immediately remove the food after catching it
-            OnFoodEating?.Invoke();
+            OnVeggieEating?.Invoke(); // Trigger the event if there are subscribers
         }
     }
 

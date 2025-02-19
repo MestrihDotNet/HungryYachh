@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\godot-repos\\HungryYach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\godot-repos\\HungryYach\\scripts\\HeadArea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\HeadArea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\moutharea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\moutharea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\veggies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\veggies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|c:\\godot-repos\\hungryyach\\scripts\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04AB24D6-5243-46E0-BDF6-CA7DEC042517}|New Game Project.csproj|solutionrelative:scripts\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Food.cs",
               "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\Food.cs",
               "RelativeDocumentMoniker": "scripts\\Food.cs",
               "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\Food.cs",
               "RelativeToolTip": "scripts\\Food.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAQwBoAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T10:24:27.738Z",
               "IsPinned": true,
@@ -48,28 +48,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MouthArea.cs",
               "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\MouthArea.cs",
               "RelativeDocumentMoniker": "scripts\\MouthArea.cs",
               "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\MouthArea.cs",
               "RelativeToolTip": "scripts\\MouthArea.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T17:01:06.011Z",
+              "WhenOpened": "2025-02-19T13:40:18.775Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HeadArea.cs",
-              "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\HeadArea.cs",
-              "RelativeDocumentMoniker": "scripts\\HeadArea.cs",
-              "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\HeadArea.cs",
-              "RelativeToolTip": "scripts\\HeadArea.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Veggies.cs",
+              "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\Veggies.cs",
+              "RelativeDocumentMoniker": "scripts\\Veggies.cs",
+              "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\Veggies.cs",
+              "RelativeToolTip": "scripts\\Veggies.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T16:20:30.514Z",
+              "WhenOpened": "2025-02-19T11:59:07.215Z",
               "EditorCaption": ""
             },
             {
@@ -80,20 +80,20 @@
               "RelativeDocumentMoniker": "scripts\\Player.cs",
               "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\Player.cs",
               "RelativeToolTip": "scripts\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T10:24:13.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\godot-repos\\HungryYach\\scripts\\Game.cs",
               "RelativeDocumentMoniker": "scripts\\Game.cs",
               "ToolTip": "C:\\godot-repos\\HungryYach\\scripts\\Game.cs",
               "RelativeToolTip": "scripts\\Game.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T23:17:35.141Z",
               "EditorCaption": ""

@@ -4,7 +4,6 @@ public partial class Player : Area2D
 {
     private HeadArea headArea;
     private MouthArea mouthArea;
-    [Signal] public delegate void OnFoodCaughtEventHandler();
     [Export] float _speed = 200.0f;
     [Export] float _margin = 52.0f;
     private Timer chewingTimer;
@@ -12,28 +11,28 @@ public partial class Player : Area2D
     bool isHumming = false;
     bool isChewing = false;
 
-
-  
-
     public override void _Ready()
     {
         headArea = GetNode<HeadArea>("HeadArea");
         mouthArea = GetNode<MouthArea>("MouthArea");
         animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        chewingTimer = new Timer();  // Create a new Timer
-        AddChild(chewingTimer);  // Add Timer as a child of Player
-        chewingTimer.WaitTime = 0.5f;  // Set the timer duration to match your animation
-        chewingTimer.OneShot = true;  // Set the timer to fire only once
+
+        // Setup Timer for Chewing Animation
+        chewingTimer = new Timer();
+        AddChild(chewingTimer);
+        chewingTimer.WaitTime = 0.5f;
+        chewingTimer.OneShot = true;
         chewingTimer.Timeout += OnChewingTimeout;
 
+        // Subscribe to the events correctly
         headArea.OnHeadDetection += HandleHeadDetection;
-        headArea.OnHeadAreaExited += HandleHeadAreaExited;
-        mouthArea.OnMouthDetection += HandleMouthDetection;
+        mouthArea.OnMouthDetectVeggies += OnMouthDetectVeggies;
+        mouthArea.OnMouthDetectFood += OnMouthDetectFood;
     }
 
     public override void _Process(double delta)
     {
-        // Basic horizontal movement logic.
+        // Basic movement logic
         if (Input.IsActionPressed("right"))
         {
             Position += new Vector2(_speed * (float)delta, 0);
@@ -43,46 +42,57 @@ public partial class Player : Area2D
         {
             Position -= new Vector2(_speed * (float)delta, 0);
             animatedSprite.Play("drive_left");
-        } else if (isHumming == false && isChewing == false)
+        }
+        else if (!isHumming && !isChewing)
         {
             animatedSprite.Play("idle");
         }
 
-
-            Rect2 viewportRect = GetViewportRect();
+        // Keep player within viewport bounds
+        Rect2 viewportRect = GetViewportRect();
         Position = new Vector2(
             Mathf.Clamp(Position.X, viewportRect.Position.X + _margin, viewportRect.End.X - _margin),
             Position.Y
         );
     }
 
-
     private void OnChewingTimeout()
     {
         isChewing = false;
-        isHumming = false;// Reset the flag after the timer ends
+        isHumming = false; // Reset flags after chewing animation ends
     }
 
     private void HandleHeadDetection()
     {
-        GD.Print("Head area detected!");
         animatedSprite.Play("humming");
         isHumming = true;
         isChewing = false;
     }
 
-    private void HandleHeadAreaExited()
-    {
-        GD.Print("area exited");
-    }
-
     private void HandleMouthDetection()
     {
-        GD.Print("heyooooooooo");
-        animatedSprite.Play("chewing");  // Play the "chewing" animation
-        isHumming = false;
+        animatedSprite.Play("chewing");
         isChewing = true;
-        chewingTimer.Start();  // Start the timer after starting the chewing animation
-        EmitSignal(SignalName.OnFoodCaught);
+        chewingTimer.Start();
+    }
+
+    private void OnVeggieEating()
+    {
+        animatedSprite.Play("damaged");
+        isChewing = true;
+        chewingTimer.Start();
+        GD.Print("veggggggie");
+    }
+
+    private void OnMouthDetectVeggies()
+    {
+        GD.Print("Veggies detected! Playing damaged animation.");
+        OnVeggieEating();  // Call the function when veggies are eaten
+    }
+
+    private void OnMouthDetectFood()
+    {
+        GD.Print("Food detected! Playing chewing animation.");
+        HandleMouthDetection();  // Call chewing animation when food is eaten
     }
 }

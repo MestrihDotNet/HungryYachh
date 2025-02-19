@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://gqp61jwlkb70"]
+[gd_scene load_steps=4 format=3 uid="uid://biij6xgujsmw7"]
 
-[ext_resource type="Script" path="res://scripts/Food.cs" id="1_dbg6c"]
-[ext_resource type="Texture2D" uid="uid://bt4l1s2mtdmhx" path="res://assets/only_fruit.png" id="2_gq5lk"]
+[ext_resource type="Script" path="res://scripts/Veggies.cs" id="1_01sni"]
+[ext_resource type="Texture2D" uid="uid://bognelew2yq1m" path="res://assets/only-veggies.png" id="2_2tupd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n2e7o"]
 radius = 8.24621
 
-[node name="Food" type="Area2D" node_paths=PackedStringArray("FoodSprite") groups=["Food"]]
+[node name="Veggies" type="Area2D" node_paths=PackedStringArray("FoodSprite") groups=["Veggies"]]
 z_index = 1
-script = ExtResource("1_dbg6c")
+script = ExtResource("1_01sni")
 FoodSprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_gq5lk")
+texture = ExtResource("2_2tupd")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 32)
 

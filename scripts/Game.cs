@@ -5,16 +5,20 @@ using System.Threading.Tasks.Sources;
 public partial class Game : Node2D
 {
     [Export] private PackedScene _foodScene;
+    [Export] private PackedScene _veggiesScene;
     [Export] private Timer _spawnTimer;
+    [Export] private Timer _veggiesTimer;
     private const int FOOD_MARGIN = 52;
-    [Export] public ProgressBar progressbar;
-    [Export] private Label scoreLabel;
+    [Export] public ProgressBar sugarBar;
+    [Export] public ProgressBar healthBar;
 
     private int score = 0;
     public override void _Ready()
     {
         _spawnTimer.Timeout += SpawnFood;
         SpawnFood();
+        _veggiesTimer.Timeout += SpawnVeggies;
+        SpawnVeggies();
     }
     public override void _Process(double delta)
     {
@@ -28,9 +32,26 @@ public partial class Game : Node2D
 
         float rx = (float)GD.RandRange(vpr.Position.X +FOOD_MARGIN, vpr.End.X -FOOD_MARGIN);
         food.Position = new Vector2(rx, -100);
+        food.OnFoodEating += OnFoodEating;
     }
-    private void _on_player_on_food_caught()
+    private void SpawnVeggies()
     {
-        progressbar.Value += 10;
+        Rect2 vpr = GetViewportRect();
+        Veggies veggies = (Veggies)_veggiesScene.Instantiate();
+        AddChild(veggies);
+
+        float rx = (float)GD.RandRange(vpr.Position.X + FOOD_MARGIN, vpr.End.X - FOOD_MARGIN);
+        veggies.Position = new Vector2(rx, -100);
+        veggies.OnVeggieEating += OnVeggieEating;
+    }
+    private void OnVeggieEating()
+    {
+        healthBar.Value += 7;
+        sugarBar.Value -= 3;
+    }
+    private void OnFoodEating()
+    {
+        healthBar.Value -= 6;
+        sugarBar.Value += 4;
     }
 }

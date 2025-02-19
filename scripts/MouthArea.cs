@@ -3,21 +3,30 @@ using System;
 
 public partial class MouthArea : Area2D
 {
-    //[Signal] public delegate void OnMouthDetectionEventHandler();
     public event Action OnMouthDetection;
-    // Called when the node enters the scene tree for the first time.
+    public event Action OnMouthDetectVeggies;
+    public event Action OnMouthDetectFood;
+
     public override void _Ready()
     {
         AreaEntered += OnAreaEntered;
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
     private void OnAreaEntered(Area2D area)
     {
-        OnMouthDetection?.Invoke(); // Trigger the event if there are subscribers
+        if (area is Veggies)
+        {
+            GD.Print("Veggies entered MouthArea!");
+            OnMouthDetectVeggies?.Invoke();
+        }
+        else if (area is Food)  // Assuming Food is another Area2D type
+        {
+            GD.Print("Food entered MouthArea!");
+            OnMouthDetectFood?.Invoke();
+        }
+        else
+        {
+            GD.Print("Unknown object entered MouthArea.");
+        }
     }
-    //public void OnAreayyyEntered(Area2D area)
-    //{
-    //    EmitSignal(SignalName.OnMouthDetection);
-    //}
 }
