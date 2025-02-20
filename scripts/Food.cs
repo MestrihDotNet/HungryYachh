@@ -12,7 +12,7 @@ public partial class Food : Area2D
 	[Export] public int FoodWidth = 16;   // Width of each food item (16px)
     [Export] public int FoodHeight = 16;  // Height of each food item (16px)
     [Export] public int Columns = 3;      // Number of columns in the sprite sheet (3)
-    [Export] public int Rows = 2;
+    [Export] public int Rows = 2;   // Number of rows in the sprite sheet (3)
 
     public override void _Ready()
 	{
